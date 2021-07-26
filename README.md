@@ -33,7 +33,7 @@ query getBook {
 ## Variables
 
 Query with variables:
-```json
+```js
 query getBooks($filter: String = "Кап") {
   books(Filter: $filter) {
     id
