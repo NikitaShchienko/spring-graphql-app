@@ -4,7 +4,7 @@ Spring boot application with GraphQL
 ## Query
 
 Simple query:
-```json
+```js
 query getAuthors {
     authors {
         id
@@ -21,7 +21,7 @@ query getBooks {
 ```
 
 Query with arguments:
-```json
+```js
 query getBook {
   book(id: 1) {
     id
@@ -50,7 +50,7 @@ query getBooks($filter: String = "Кап") {
 ## Alias
 
 Query with alias:
-```json
+```js
 query getBook {
   firstBook: book(id: 1) {
     id
@@ -66,7 +66,7 @@ query getBook {
 ## Mutation
 
 Example:
-```json
+```js
 mutation delete {
    deleteAuthor(id: 1)
  }
@@ -94,7 +94,7 @@ mutaion update {
 ## Fragment 
 
 Query with fragment:
-```json
+```js
 
 fragment nameFields on Author {
 	firstName
@@ -115,7 +115,7 @@ query getAllAuthors {
 
 Mutation with AuthorInput type:
 
-```json
+```js
 mutation addAuthor {
   addAuthor(author: {
     lastName: "Test 1"
@@ -132,7 +132,7 @@ mutation addAuthor {
 
 Directive `@include`
 
-```json
+```js
 query getAuthors($withBooks: Boolean = false) {
   authors {
     id
@@ -152,7 +152,7 @@ query getAuthors($withBooks: Boolean = false) {
 
 Directive `@skip`
 
-```json
+```js
 query getAuthors($withoutBooks: Boolean = true) {
   authors {
     id
